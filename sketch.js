@@ -20,10 +20,17 @@ function draw() {
   fill(0, 200, 0)
   steml1 = 300
   rect(width / 2 - 10, 2 * height / 3 + horizon + stemdown, 20, -steml1)
+  if (hour()>=12){ //creates silhouette of bird, representing PM. Absence of bird represents AM
+    fill(0,0,0)
+    arc(48,51,20,20,PI, 1.75*PI, CHORD)
+    arc(32,51,20,20,1.25*PI, 0, CHORD)
+    triangle(32,44,48, 44, 40, 53)
+  }
+
   fill(58, 95, 11)
   alt = 1
 
-  for (let k = 0; k < hour%12; k++) { //leaves
+  for (let k = 0; k < hour()%12; k++) { //creates leaves, representing hours.
     push()
     stroke(1)
     let len1 = 120
@@ -53,7 +60,7 @@ function draw() {
 
   }
 
-  for (let i = 0; i < second(); i++) { //petals
+  for (let i = 0; i < second(); i++) { //creates petals, representing seconds
     // let mylist = []
     push()
     stroke(1)
@@ -83,7 +90,7 @@ function draw() {
 
     fill(255, 170, 0)
 
-  for (j = 0; j < minute(); j++) { //spiral
+  for (j = 0; j < minute(); j++) { //creates seed spiral, representing minutes
     push()
     let angle = map(j, 0, 59, 0, 7 * TWO_PI);
     let distance = map(j, 0, 59, 0, circledi / 2 - 3);

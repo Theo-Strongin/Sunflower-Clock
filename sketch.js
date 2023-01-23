@@ -22,7 +22,7 @@ function draw() {
   rect(width / 2 - 10, 2 * height / 3 + horizon + stemdown, 20, -steml1)
   fill(58, 95, 11)
   alt = 1
-  for (let k = 0; k < Math.floor(hour()/2); k++) {
+  for (let k = 0; k < hour(); k++) { //leaves
     push()
     stroke(1)
     let len1 = 120
@@ -85,7 +85,7 @@ function draw() {
   for (j = 0; j < minute(); j++) { //spiral
     push()
     let angle = map(j, 0, 59, 0, 7 * TWO_PI);
-    let distance = map(j, 0, 59, 20, circledi / 2 - 3);
+    let distance = map(j, 0, 59, 0, circledi / 2 - 3);
     let cos_a = cos(angle);
     let sin_a = sin(angle);
     translate(width / 2, circleheight);

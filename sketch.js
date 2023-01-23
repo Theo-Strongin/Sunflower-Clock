@@ -23,7 +23,6 @@ function draw() {
   fill(58, 95, 11)
   alt = 1
   for (let k = 0; k < Math.floor(hour()/2); k++) {
-    console.log(hour()/2)
     push()
     stroke(1)
     let len1 = 120

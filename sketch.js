@@ -22,7 +22,8 @@ function draw() {
   rect(width / 2 - 10, 2 * height / 3 + horizon + stemdown, 20, -steml1)
   fill(58, 95, 11)
   alt = 1
-  for (let k = 0; k < hour() / 5; k++) {
+  for (let k = 0; k < Math.floor(hour()/2); k++) {
+    console.log(hour()/2)
     push()
     stroke(1)
     let len1 = 120
